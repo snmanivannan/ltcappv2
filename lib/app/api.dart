@@ -6,7 +6,7 @@ import '../models/user_model.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  static const String _baseUrl = 'http://ishaqhassan.com:2000';
+  static const String _baseUrl = 'https://2908f9ba-3645-489a-984e-085d03d116a1.mock.pstmn.io';
 
   static Future<User> signupUser(
     String email,
@@ -77,11 +77,13 @@ class Api {
     try {
       http.Response responce = await http.get(categoryUrl,
           headers: {"Authorization": "Bearer ${accessToken.toString()}"});
+      print(responce.body);
       List<dynamic> json = jsonDecode(responce.body)["data"];
       List<Category> categories =
           json.map((object) => Category.fromJson(object)).toList();
       return categories;
     } catch (e) {
+      print( "getCateogry: "  + e.toString());
       throw (e.toString());
     }
   }
@@ -91,11 +93,13 @@ class Api {
     try {
       http.Response responce = await http.get(productUrl,
           headers: {"Authorization": "Bearer ${accessToken.toString()}"});
+      print(responce.body);
       List<dynamic> json = jsonDecode(responce.body)["data"];
       List<Product> products =
           json.map((object) => Product.fromJson(object)).toList();
       return products;
     } catch (e) {
+      print( "getProducts: "  + e.toString());
       throw (e.toString());
     }
   }
@@ -106,11 +110,13 @@ class Api {
     try {
       http.Response responce = await http.get(productUrl,
           headers: {"Authorization": "Bearer ${accessToken.toString()}"});
+      print(responce.body);
       List<dynamic> json = jsonDecode(responce.body)["data"];
       List<Product> products =
           json.map((object) => Product.fromJson(object)).toList();
       return products;
     } catch (e) {
+      print( "getProductsByCategory: "  + e.toString());
       throw (e.toString());
     }
   }
@@ -122,11 +128,13 @@ class Api {
     try {
       http.Response responce = await http.get(productUrl,
           headers: {"Authorization": "Bearer ${accessToken.toString()}"});
+      print(responce.body);
       List<dynamic> json = jsonDecode(responce.body)["data"];
       List<Product> products =
           json.map((object) => Product.fromJson(object)).toList();
       return products;
     } catch (e) {
+      print( "getProductsByTitle: "  + e.toString());
       throw (e.toString());
     }
   }
