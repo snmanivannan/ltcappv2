@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants/asset_constants.dart';
@@ -41,53 +42,62 @@ class ProductCard extends StatelessWidget {
               Expanded(
                 child: Container(
                   margin: EdgeInsets.only(
-                    left: 30,
-                    right: 30,
-                    top: 21,
-                  ),
+                      //left: 30,
+                      //right: 30,
+                      //top: 21,
+                      ),
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
+                      // Container(
+                      //   margin: const EdgeInsets.only(bottom: 18),
+                      //   child: FittedBox(
+                      //     child: Container(
+                      //       height: 10,
+                      //       width: 10,
+                      //       decoration: BoxDecoration(
+                      //         color: Color(
+                      //           int.parse(
+                      //             '0xFF' + shadeColor.toString().substring(1),
+                      //           ),
+                      //         ).withOpacity(0.3),
+                      //         shape: BoxShape.circle,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
-                        margin: const EdgeInsets.only(bottom: 18),
-                        child: FittedBox(
-                          child: Container(
-                            height: 10,
-                            width: 10,
-                            decoration: BoxDecoration(
-                              color: Color(
-                                int.parse(
-                                  '0xFF' + shadeColor.toString().substring(1),
-                                ),
-                              ).withOpacity(0.3),
-                              shape: BoxShape.circle,
-                            ),
-                          ),
+
+                        margin: const EdgeInsets.only(bottom: 8,
+                        //    top: 8
                         ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 8, top: 15),
-                        child: FittedBox(
-                            child: Image.network(
-                                image ?? AssetConstants.errorIcon)),
-                      )
+                        child: Image.network(
+                          image ?? AssetConstants.errorIcon,
+                          fit:BoxFit.cover,
+                          alignment: Alignment.topCenter,
+
+                        ),
+
+                       )
                     ],
                   ),
                 ),
               ),
-              Text(
-                '\$' + (price ?? 0).toString().padRight(4, '0'),
-                style: paragraph6.copyWith(color: appGreenColor),
-              ),
+              // Text(
+              //   '\$' + (price ?? 0).toString().padRight(4, '0'),
+              //   style: paragraph6.copyWith(color: appGreenColor),
+              // ),
               Text(
                 title ?? '',
                 style: heading7.copyWith(color: Colors.black),
+                maxLines: 2,
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 2),
-              Text(
-                unit ?? '',
-                style: paragraph6,
-              ),
+              // Text(
+              //   unit ?? '',
+              //   style: paragraph6,
+              // ),
               const SizedBox(height: 15),
               Container(
                 height: 1,
@@ -166,8 +176,8 @@ class ProductCard extends StatelessWidget {
           ),
         ),
         Positioned(
-            top: 9,
-            right: 8,
+            top: 5,
+            left: 8,
             child: GestureDetector(
               onTap: onFavoriteButtonTap,
               child: Image.asset(
