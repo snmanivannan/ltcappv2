@@ -51,31 +51,31 @@ class CartItemList extends ViewModelWidget<ShoppingCartViewModel> {
                 children: [
                   Container(
                     width: 104,
-                    padding: const EdgeInsets.only(top: 15, bottom: 8),
+                    padding: const EdgeInsets.only(top: 0, bottom: 8),
                     color: Colors.transparent,
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 18),
-                          child: FittedBox(
-                            child: Container(
-                              height: 10,
-                              width: 10,
-                              decoration: BoxDecoration(
-                                color: Color(
-                                  int.parse(
-                                    '0xFF' +
-                                        viewModel.cart[index].color
-                                            .toString()
-                                            .substring(1),
-                                  ),
-                                ).withOpacity(0.3),
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                          ),
-                        ),
+                        // Container(
+                        //   margin: const EdgeInsets.only(bottom: 18),
+                        //   child: FittedBox(
+                        //     child: Container(
+                        //       height: 10,
+                        //       width: 10,
+                        //       decoration: BoxDecoration(
+                        //         color: Color(
+                        //           int.parse(
+                        //             '0xFF' +
+                        //                 viewModel.cart[index].color
+                        //                     .toString()
+                        //                     .substring(1),
+                        //           ),
+                        //         ).withOpacity(0.3),
+                        //         shape: BoxShape.circle,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         Container(
                           margin: const EdgeInsets.only(bottom: 8, top: 15),
                           child: FittedBox(
@@ -92,7 +92,7 @@ class CartItemList extends ViewModelWidget<ShoppingCartViewModel> {
                     children: [
                       const SizedBox(height: 2),
                       Text(
-                        '\$' +
+                        //'\$' +
                             (viewModel.cart[index].price ?? 0)
                                 .toString()
                                 .padRight(4, '0') +
@@ -104,10 +104,10 @@ class CartItemList extends ViewModelWidget<ShoppingCartViewModel> {
                         viewModel.cart[index].title ?? '',
                         style: heading7.copyWith(color: Colors.black),
                       ),
-                      Text(
-                        viewModel.cart[index].unit ?? '',
-                        style: paragraph6,
-                      ),
+                      // Text(
+                      //   viewModel.cart[index].unit ?? '',
+                      //   style: paragraph6,
+                      // ),
                     ],
                   ),
                   const Spacer(),

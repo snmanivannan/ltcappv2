@@ -35,6 +35,10 @@ class HomeViewModel extends BaseViewModel {
     return _cartService.getQuantityFromProduct(product);
   }
 
+  int getCartTotalQuantity(){
+    return _cartService.getCartTotalQuantity();
+  }
+
   void addToCart(Product product) {
     _cartService.addProduct(product);
     notifyListeners();

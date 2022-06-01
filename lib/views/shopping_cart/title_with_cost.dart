@@ -4,12 +4,14 @@ class TitleWithCost extends StatelessWidget {
   final String title;
   final double cost;
   final TextStyle style;
+  final int totalQty;
 
   const TitleWithCost({
     Key? key,
     required this.title,
     required this.cost,
     required this.style,
+    required this.totalQty,
   }) : super(key: key);
 
   @override
@@ -23,8 +25,12 @@ class TitleWithCost extends StatelessWidget {
             title,
             style: style,
           ),
+          // Text(
+          //   '\$' + cost.toStringAsFixed(1),
+          //   style: style,
+          // ),
           Text(
-            '\$' + cost.toStringAsFixed(1),
+            totalQty.toString(),
             style: style,
           ),
         ],

@@ -29,6 +29,18 @@ class ShoppingCartViewModel extends BaseViewModel {
     }
   }
 
+  int get subTotalQty{
+    int total = 0;
+    try {
+      for (Product item in cart) {
+        total += item.qty!;
+      }
+      return total;
+    } catch (e) {
+      return 0;
+    }
+  }
+
   int productQuantity(Product product) {
     return _cartService.getQuantityFromProduct(product);
   }
@@ -51,4 +63,9 @@ class ShoppingCartViewModel extends BaseViewModel {
   void moveToCheckout() {
     _navigator.navigateTo(Routes.checkoutView);
   }
+
+  String orderText() {
+    return cart.toString();
+  }
+
 }

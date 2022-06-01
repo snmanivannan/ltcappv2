@@ -50,6 +50,18 @@ class CartService {
     }
   }
 
+  int getCartTotalQuantity() {
+    int total = 0;
+    try {
+      for (Product item in cart) {
+        total += item.qty!;
+      }
+      return total;
+    } catch (e) {
+      return 0;
+    }
+  }
+
   void addOrRemoveFavorites(Product product) {
     int index = _favorites.indexWhere((element) => element.id == product.id);
     if (index == -1) {

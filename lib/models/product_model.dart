@@ -45,4 +45,8 @@ class Product {
     data['qty'] = this.qty;
     return data;
   }
+
+  String toString() {
+    return '{ ${this.id} x ${this.qty} %0A}';
+  }
 }
