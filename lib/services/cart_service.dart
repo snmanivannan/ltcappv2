@@ -1,4 +1,4 @@
-import 'package:big_cart/models/product_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/product_model.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

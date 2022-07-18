@@ -1,6 +1,6 @@
-import 'package:big_cart/services/authentication_service.dart';
-import 'package:big_cart/services/carousel_service.dart';
-import 'package:big_cart/services/cart_service.dart';
+import 'package:lotus_trading_company_sivakasi/services/authentication_service.dart';
+import 'package:lotus_trading_company_sivakasi/services/carousel_service.dart';
+import 'package:lotus_trading_company_sivakasi/services/cart_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:stacked_services/stacked_services.dart';
 

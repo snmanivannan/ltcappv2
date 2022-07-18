@@ -1,7 +1,7 @@
-import 'package:big_cart/constants/asset_constants.dart';
-import 'package:big_cart/shared/styles.dart';
-import 'package:big_cart/viewmodels/shopping_cart_viewmodel.dart';
-import 'package:big_cart/widgets/dumb/customized_app_bar.dart';
+import 'package:lotus_trading_company_sivakasi/constants/asset_constants.dart';
+import 'package:lotus_trading_company_sivakasi/shared/styles.dart';
+import 'package:lotus_trading_company_sivakasi/viewmodels/shopping_cart_viewmodel.dart';
+import 'package:lotus_trading_company_sivakasi/widgets/dumb/customized_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';

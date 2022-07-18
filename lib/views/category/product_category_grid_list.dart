@@ -1,4 +1,4 @@
-import 'package:big_cart/viewmodels/category_viewmodel.dart';
+import 'package:lotus_trading_company_sivakasi/viewmodels/category_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../shared/helpers.dart';

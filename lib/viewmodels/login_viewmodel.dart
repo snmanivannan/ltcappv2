@@ -1,8 +1,8 @@
-import 'package:big_cart/app/app.router.dart';
-import 'package:big_cart/app/locator.dart';
-import 'package:big_cart/services/authentication_service.dart';
-import 'package:big_cart/shared/styles.dart';
-import 'package:big_cart/views/login/login_form.dart';
+import 'package:lotus_trading_company_sivakasi/app/app.router.dart';
+import 'package:lotus_trading_company_sivakasi/app/locator.dart';
+import 'package:lotus_trading_company_sivakasi/services/authentication_service.dart';
+import 'package:lotus_trading_company_sivakasi/shared/styles.dart';
+import 'package:lotus_trading_company_sivakasi/views/login/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';

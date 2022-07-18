@@ -1,7 +1,7 @@
-import 'package:big_cart/app/app.router.dart';
-import 'package:big_cart/constants/asset_constants.dart';
-import 'package:big_cart/shared/helpers.dart';
-import 'package:big_cart/shared/styles.dart';
+import 'package:lotus_trading_company_sivakasi/app/app.router.dart';
+import 'package:lotus_trading_company_sivakasi/constants/asset_constants.dart';
+import 'package:lotus_trading_company_sivakasi/shared/helpers.dart';
+import 'package:lotus_trading_company_sivakasi/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked_services/stacked_services.dart';

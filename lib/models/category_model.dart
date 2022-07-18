@@ -1,4 +1,4 @@
-import 'package:big_cart/models/api_responce_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/api_responce_model.dart';
 
 class Category extends ApiDataModel {
   int? id;

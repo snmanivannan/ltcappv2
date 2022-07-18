@@ -1,11 +1,11 @@
-import 'package:big_cart/app/api.dart';
-import 'package:big_cart/app/app.router.dart';
-import 'package:big_cart/app/locator.dart';
-import 'package:big_cart/models/category_model.dart';
-import 'package:big_cart/models/product_model.dart';
-import 'package:big_cart/services/authentication_service.dart';
-import 'package:big_cart/services/carousel_service.dart';
-import 'package:big_cart/services/cart_service.dart';
+import 'package:lotus_trading_company_sivakasi/app/api.dart';
+import 'package:lotus_trading_company_sivakasi/app/app.router.dart';
+import 'package:lotus_trading_company_sivakasi/app/locator.dart';
+import 'package:lotus_trading_company_sivakasi/models/category_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/product_model.dart';
+import 'package:lotus_trading_company_sivakasi/services/authentication_service.dart';
+import 'package:lotus_trading_company_sivakasi/services/carousel_service.dart';
+import 'package:lotus_trading_company_sivakasi/services/cart_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -115,8 +115,11 @@ class HomeViewModel extends BaseViewModel {
     products = <Product>[];
     try {
       if (onlyProducts) {
-        products =
-            await Api.getProductsByTitle(_auth.authToken, _searchBarText);
+        products =await Api.getProducts(_auth.authToken);
+        //var data = products.where((element) => (element.title!.contains(_searchBarText)));
+        products = products.where((element) => element.title!.contains(_searchBarText)).take(10).toList();
+            //await Api.getProductsByTitle(_auth.authToken, _searchBarText);
+
         _isLoading = false;
       } else {
         categories = await Api.getCategories(_auth.authToken);
@@ -124,6 +127,7 @@ class HomeViewModel extends BaseViewModel {
         _isLoading = false;
       }
     } catch (e) {
+      print(e);
       _hasError = true;
     }
     notifyListeners();

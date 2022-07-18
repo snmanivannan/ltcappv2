@@ -1,6 +1,6 @@
-import 'package:big_cart/app/app.router.dart';
-import 'package:big_cart/app/locator.dart';
-import 'package:big_cart/services/authentication_service.dart';
+import 'package:lotus_trading_company_sivakasi/app/app.router.dart';
+import 'package:lotus_trading_company_sivakasi/app/locator.dart';
+import 'package:lotus_trading_company_sivakasi/services/authentication_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

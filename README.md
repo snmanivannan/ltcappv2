@@ -1,5 +1,5 @@
-# Big Cart
-## An Ecommerce app to buy groceries
+# Lotus Trading Company
+## An Ecommerce app to buy charts
 
 - Framework: Flutter
 - Architecture: MVVM

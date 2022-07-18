@@ -6,7 +6,7 @@ class Product {
   int? stockAvailable;
   String? image;
   String? color;
-  double? price;
+  int? price;
   int? qty;
 
   Product(
@@ -24,7 +24,7 @@ class Product {
     id = json['id'];
     catId = json['catId'];
     title = json['title'];
-    unit = json['unit'];
+    //unit = json['unit'];
     stockAvailable = json['stockAvailable'];
     image = json['image'];
     color = json['color'];
@@ -47,6 +47,6 @@ class Product {
   }
 
   String toString() {
-    return '{ ${this.id} x ${this.qty} %0A}';
+    return '{ ${this.id}. ${this.title} x ${this.qty} %0A}';
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:big_cart/models/api_responce_model.dart';
-import 'package:big_cart/models/category_model.dart';
-import 'package:big_cart/models/product_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/api_responce_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/category_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/product_model.dart';
 import '../models/user_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -75,6 +75,7 @@ class Api {
   static Future<List<Category>> getCategories(String? accessToken) async {
     var categoryUrl = Uri.parse(_baseUrl + '/category');
     try {
+      print("getCategories");
       http.Response responce = await http.get(categoryUrl,
           headers: {"Authorization": "Bearer ${accessToken.toString()}"});
       print(responce.body);

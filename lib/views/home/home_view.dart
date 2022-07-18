@@ -1,6 +1,6 @@
-import 'package:big_cart/shared/styles.dart';
-import 'package:big_cart/viewmodels/home_viewmodel.dart';
-import 'package:big_cart/views/home/product_grid_list.dart';
+import 'package:lotus_trading_company_sivakasi/shared/styles.dart';
+import 'package:lotus_trading_company_sivakasi/viewmodels/home_viewmodel.dart';
+import 'package:lotus_trading_company_sivakasi/views/home/product_grid_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';

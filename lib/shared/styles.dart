@@ -1,4 +1,4 @@
-import 'package:big_cart/constants/asset_constants.dart';
+import 'package:lotus_trading_company_sivakasi/constants/asset_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

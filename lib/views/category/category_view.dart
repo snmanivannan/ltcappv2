@@ -1,10 +1,10 @@
-import 'package:big_cart/constants/asset_constants.dart';
-import 'package:big_cart/shared/styles.dart';
-import 'package:big_cart/viewmodels/category_viewmodel.dart';
-import 'package:big_cart/views/category/product_category_grid_list.dart';
-import 'package:big_cart/widgets/dumb/customized_app_bar.dart';
-import 'package:big_cart/widgets/dumb/loading_indicator.dart';
-import 'package:big_cart/widgets/dumb/page_error_indicator.dart';
+import 'package:lotus_trading_company_sivakasi/constants/asset_constants.dart';
+import 'package:lotus_trading_company_sivakasi/shared/styles.dart';
+import 'package:lotus_trading_company_sivakasi/viewmodels/category_viewmodel.dart';
+import 'package:lotus_trading_company_sivakasi/views/category/product_category_grid_list.dart';
+import 'package:lotus_trading_company_sivakasi/widgets/dumb/customized_app_bar.dart';
+import 'package:lotus_trading_company_sivakasi/widgets/dumb/loading_indicator.dart';
+import 'package:lotus_trading_company_sivakasi/widgets/dumb/page_error_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';

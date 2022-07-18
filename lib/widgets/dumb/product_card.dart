@@ -7,7 +7,7 @@ import '../../shared/styles.dart';
 class ProductCard extends StatelessWidget {
   final String? shadeColor;
   final String? image;
-  final double? price;
+  final int? price;
   final String? title;
   final String? unit;
   int qtyInCart;

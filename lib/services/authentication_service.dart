@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:big_cart/models/user_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/user_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../app/api.dart';

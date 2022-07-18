@@ -1,4 +1,4 @@
-import 'package:big_cart/models/carousel_item_model.dart';
+import 'package:lotus_trading_company_sivakasi/models/carousel_item_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
