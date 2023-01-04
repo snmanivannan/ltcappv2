@@ -115,15 +115,18 @@ class HomeViewModel extends BaseViewModel {
     products = <Product>[];
     try {
       if (onlyProducts) {
+
         products =await Api.getProducts(_auth.authToken);
         //var data = products.where((element) => (element.title!.contains(_searchBarText)));
-        products = products.where((element) => element.title!.contains(_searchBarText)).take(10).toList();
+        products = products.where((element) => element.title!.toLowerCase().contains(_searchBarText)).take(10).toList();
             //await Api.getProductsByTitle(_auth.authToken, _searchBarText);
+        print(products);
 
         _isLoading = false;
       } else {
         categories = await Api.getCategories(_auth.authToken);
         products = await Api.getProducts(_auth.authToken);
+        products = products.take(10).toList();
         _isLoading = false;
       }
     } catch (e) {

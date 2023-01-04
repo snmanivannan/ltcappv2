@@ -1,11 +1,11 @@
 {
-    "name": "big_cart",
-    "short_name": "big_cart",
+    "name": "Lotus Trading Company, Sivakasi",
+    "short_name": "lotus trading company",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "An ecommerce app for buying charts directly from the manufacturer, Lotus Trading Company Sivakasi.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

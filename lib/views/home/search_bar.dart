@@ -34,6 +34,8 @@ class SearchBar extends HookViewModelWidget<HomeViewModel> {
         onChanged: (text) => viewModel.searchBarText = text,
         onSubmitted: (text) {
           viewModel.onlyProducts = true;
+          // viewModel.products.where((element) => element.title!.toLowerCase().contains(text)).take(10).toList();
+          // viewModel.notifyListeners();
           viewModel.onModelReady();
         },
         cursorColor: appGreyColor,

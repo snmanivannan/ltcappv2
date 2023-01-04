@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     precacheImage(AssetImage(AssetConstants.splashScreenBackground), context);
     return MaterialApp(
-      title: 'Big Cart',
+      title: 'Lotus Trading Company',
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       home: HomeView(),

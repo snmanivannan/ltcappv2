@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants/asset_constants.dart';
 import '../../shared/styles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
 
 class ProductCard extends StatelessWidget {
   final String? shadeColor;
@@ -67,18 +69,23 @@ class ProductCard extends StatelessWidget {
                       //   ),
                       // ),
                       Container(
-
-                        margin: const EdgeInsets.only(bottom: 8,
-                        //    top: 8
+                        margin: const EdgeInsets.only(
+                          bottom: 8,
+                          //    top: 8
                         ),
-                        child: Image.network(
-                          image ?? AssetConstants.errorIcon,
-                          fit:BoxFit.cover,
-                          alignment: Alignment.topCenter,
-
+                        child:
+                        CachedNetworkImage(
+                          imageUrl: image.toString(),
+                          progressIndicatorBuilder: (context, url, downloadProgress) =>
+                              CircularProgressIndicator(value: downloadProgress.progress),
+                          errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
-
-                       )
+                        // Image.network(
+                        //    image ?? AssetConstants.errorIcon,
+                        //   fit: BoxFit.cover,
+                        //   alignment: Alignment.topCenter,
+                        // ),
+                      )
                     ],
                   ),
                 ),
