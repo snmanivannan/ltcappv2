@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants/asset_constants.dart';
 import '../../shared/styles.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:ui';
 
-
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   final String? shadeColor;
   final String? image;
   final int? price;
@@ -31,6 +31,13 @@ class ProductCard extends StatelessWidget {
     required this.onPlusTap,
     required this.onFavoriteButtonTap,
   }) : super(key: key);
+
+  @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  bool _showPreview = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,23 +75,32 @@ class ProductCard extends StatelessWidget {
                       //     ),
                       //   ),
                       // ),
-                      Container(
-                        margin: const EdgeInsets.only(
-                          bottom: 8,
-                          //    top: 8
+                      GestureDetector(
+                        onTap: (){
+                          setState((){
+                            _showPreview = true;
+
+
+                          });
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(
+                            bottom: 8,
+                            //    top: 8
+                          ),
+                          child:
+                          CachedNetworkImage(
+                            imageUrl: widget.image.toString(),
+                            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                                CircularProgressIndicator(value: downloadProgress.progress),
+                            errorWidget: (context, url, error) => Icon(Icons.error),
+                          ),
+                          // Image.network(
+                          //    image ?? AssetConstants.errorIcon,
+                          //   fit: BoxFit.cover,
+                          //   alignment: Alignment.topCenter,
+                          // ),
                         ),
-                        child:
-                        CachedNetworkImage(
-                          imageUrl: image.toString(),
-                          progressIndicatorBuilder: (context, url, downloadProgress) =>
-                              CircularProgressIndicator(value: downloadProgress.progress),
-                          errorWidget: (context, url, error) => Icon(Icons.error),
-                        ),
-                        // Image.network(
-                        //    image ?? AssetConstants.errorIcon,
-                        //   fit: BoxFit.cover,
-                        //   alignment: Alignment.topCenter,
-                        // ),
                       )
                     ],
                   ),
@@ -95,7 +111,7 @@ class ProductCard extends StatelessWidget {
               //   style: paragraph6.copyWith(color: appGreenColor),
               // ),
               Text(
-                title ?? '',
+                widget.title ?? '',
                 style: heading7.copyWith(color: Colors.black),
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -114,14 +130,14 @@ class ProductCard extends StatelessWidget {
                 height: 41,
                 child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 150),
-                  child: qtyInCart > 0
+                  child: widget.qtyInCart > 0
                       ? Container(
                           color: Colors.transparent,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               GestureDetector(
-                                onTap: onMinusTap,
+                                onTap: widget.onMinusTap,
                                 child: Container(
                                   color: Colors.transparent,
                                   width: 41,
@@ -133,11 +149,11 @@ class ProductCard extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                qtyInCart.toString(),
+                                widget.qtyInCart.toString(),
                                 style: paragraph6.copyWith(color: Colors.black),
                               ),
                               GestureDetector(
-                                onTap: onPlusTap,
+                                onTap: widget.onPlusTap,
                                 child: Container(
                                   color: Colors.transparent,
                                   width: 41,
@@ -152,7 +168,7 @@ class ProductCard extends StatelessWidget {
                           ),
                         )
                       : GestureDetector(
-                          onTap: onPlusTap,
+                          onTap: widget.onPlusTap,
                           child: Container(
                             height: 40,
                             color: Colors.transparent,
@@ -186,15 +202,43 @@ class ProductCard extends StatelessWidget {
             top: 5,
             left: 8,
             child: GestureDetector(
-              onTap: onFavoriteButtonTap,
+              onTap: widget.onFavoriteButtonTap,
               child: Image.asset(
-                favoriteToggle
+                widget.favoriteToggle
                     ? AssetConstants.favoriteSelected
                     : AssetConstants.favoriteUnselected,
                 width: 18,
                 height: 16,
               ),
-            ))
+            )),
+
+        if (_showPreview) ...[
+          BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 5.0,
+              sigmaY: 5.0,
+            ),
+            child: Container(
+              color: Colors.white.withOpacity(0.6),
+            ),
+          ),
+          Container(
+            child: Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child:
+                CachedNetworkImage(
+                  imageUrl: widget.image.toString(),
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      CircularProgressIndicator(value: downloadProgress.progress),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  height: 300,
+                  width: 300,
+                ),
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

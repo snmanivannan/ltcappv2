@@ -47,6 +47,6 @@ class Product {
   }
 
   String toString() {
-    return '{ ${this.id}. ${this.title} x ${this.qty} %0A}';
+    return '{ ${this.title} x ${this.qty} %0A}';
   }
 }
